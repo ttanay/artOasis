@@ -1,2 +1,2 @@
 # artOasis
-Media Grabber for your location.
+Media Grabber for your location. (UNDER CONSTRUCTION)
