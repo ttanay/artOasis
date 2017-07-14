@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- BOOTSTRAP -->
+        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+        <!-- BULMA -->
+        <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.css">-->
+        <!-- MATERIALIZE -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Local stylesheets and scripts -->
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- NAVBAR -->
+         
+        <nav>
+            <div class="nav-wrapper black">
+                <a href="#" class="brand-logo center"><img src="assets/img/logo-60.png" style="top: 4px;height: 50px; width: 50px;" class="responsive-img"></a>
+                
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                   <li class="grey darken-3"><a href="#">Home</a></li>
+                    <li ><a href="#">Placeholder</a></li>
+                </ul>
+                <div class="input-field right">
+                    <input id="search" type="search" placeholder="Location.." required>
+                    <label class="label-icon" for="search"><i id="sicon" class="material-icons">search</i></label>
+                    <i id="clicon" class="material-icons">close</i>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAP -->
+        <script src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize"></script>
+        <div id="map"></div>
+        <script>
+        
+            var mapOptions = {
+    center: new google.maps.LatLng(28.620876, 77.092356),
+    zoom: 15,
+    mapTypeId: google.maps.MapTypeId.SATELLITE
+};
+var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+var markerOptions = {
+    position: new google.maps.LatLng(28.620876, 77.092356)
+};
+var marker = new google.maps.Marker(markerOptions);
+marker.setMap(map);
+        </script>
+    </body>
+</html>
