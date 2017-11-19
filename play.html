@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<!-- FONT AWESOME -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+       	<!-- MATERIALIZE -->
+       	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+       	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+       	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       	<!-- Fonts -->
+       	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+       	<!-- Local stylesheets and scripts -->
+        <link href="style.css" rel="stylesheet">
+		<title>artOasis | Shuffle</title>
+	</head>
+	<body>
+			<!--  NAVBAR -->
+			<nav>
+            <div class="nav-wrapper white">
+                <a href="#" class="brand-logo center black-text" id="logo">
+                <!--<img src="assets/img/marker.png" style="top: 4px;height: 50px; width: 50px;" class="responsive-img">-->
+                <bold>artOasis</bold>
+                </a>                
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                   <li><a class="black-text" href="#">Home</a></li>
+                    <li><a class="black-text" href="#">About</a></li>
+                </ul>
+                <div class="input-field right">
+                    <input id="" type="search" placeholder="Search.." required>
+                    <label class="label-icon" for="search"><i id="sicon" class="material-icons">search</i></label>
+                    <i id="clicon" class="material-icons">close</i>
+                </div>
+                <!--<script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVyf27iTd7nZ8fgoAUY_jS7nFUg7TYLWU&callback=autoComplete">
+                </script>-->
+            </div>
+        </nav>
+        <!--  END of NAVBAR -->
+       
+        <div class="black-text" id="cords"></div>
+        <div id="mediaMenu">
+            <a id="locationButton" class="btn-floating btn-large waves-effect waves-white black z-depth-4" href="./index.html">
+                <i class="material-icons white-text">my_location</i>
+            </a>
+            <div id="scloud-invert" class="btn-floating btn-large waves-effect waves-white white z-depth-4">
+                <i class="material-icons orange-text text-accent-4">skip_next</i>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+        	$('#scloud-invert').click(function(){
+        		$.ajax({
+        			type: "GET",
+        			url: "/next",
+        			success: function(data){
+        				var track_id = data;
+        				var url = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" + track_id + "&amp;color=ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false";
+        				$('#player').attr('src', url);
+        			},
+        			dataType: 'script',
+        		});
+        	});
+        });
+        </script>
+ 	</body>
+</html>
